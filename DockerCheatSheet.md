@@ -49,3 +49,9 @@
 
 - Docker compose remove all containers <br>
 `docker-compose rm -f -s -v`
+
+- Start Avro consumer
+`docker-compose exec schema-registry kafka-avro-console-consumer --bootstrap-server kafka:9092 --topic test-jdbc-passenger --from-beginning --max-messages 5`
+
+- Describe all topics
+`docker-compose exec kafka kafka-topics --describe --zookeeper zookeeper:2181`

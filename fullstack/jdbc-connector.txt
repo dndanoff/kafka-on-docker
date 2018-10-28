@@ -1,0 +1,15 @@
+{
+	"name": "test-jdbc-source",
+	"config": {
+		"connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+		"tasks.max": 1,
+		"connection.url": "jdbc:mysql://mysql-db:3306/test?user=user&password=password",
+		"table.whitelist": "passenger",
+		"table.types": "TABLE",
+		"mode": "timestamp+incrementing",
+		"incrementing.column.name": "id",
+		"timestamp.column.name": "modified",
+		"topic.prefix": "test-jdbc-",
+		"poll.interval.ms": 1000
+	}
+}
